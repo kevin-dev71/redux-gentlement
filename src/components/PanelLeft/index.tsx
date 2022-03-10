@@ -23,7 +23,10 @@ const PanelLeft = ({formUser}: {formUser: TUser}) => {
               </button>
               <button
                 className="btn"
-                onClick={() => dispatch(editUser({ ...formUser , id: user.id }))}
+                onClick={() => {
+                  if(!!!formUser.name || !!!formUser.lastName) return alert("Please fill all fields")
+                  dispatch(editUser({ ...formUser, id: user.id }))
+                }}
               >
                 Modify User
               </button>

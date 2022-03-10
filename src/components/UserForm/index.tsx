@@ -21,6 +21,7 @@ const UserForm: React.FC<Props> = ({
       <form
         onSubmit={(e) => {
           e.preventDefault()
+          if(!!!user.lastName || !!!user.name) return alert("Please fill all fields")
           dispatch(addUser([...users, { ...user, id: uuidv4() }]))
         }}
       >
