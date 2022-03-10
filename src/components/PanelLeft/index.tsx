@@ -14,7 +14,8 @@ const PanelLeft = ({formUser}: {formUser: TUser}) => {
         <ul>
           {users.map((user) => (
             <li key={user.id}>
-              {`${user.name} ${user.lastName}`}
+              <div>{`${user.name} ${user.lastName}`}</div>
+
               <button
                 className="btn"
                 onClick={() => dispatch(removeUser(user))}
@@ -24,7 +25,8 @@ const PanelLeft = ({formUser}: {formUser: TUser}) => {
               <button
                 className="btn"
                 onClick={() => {
-                  if(!!!formUser.name || !!!formUser.lastName) return alert("Please fill all fields")
+                  if (!!!formUser.name || !!!formUser.lastName)
+                    return alert("Please fill all fields")
                   dispatch(editUser({ ...formUser, id: user.id }))
                 }}
               >

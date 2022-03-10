@@ -18,3 +18,12 @@
   border: none;
   margin: 0 8px;
 }
+
+ul li {
+  padding: 16px 0;
+  border-bottom: 1px solid #CCC;
+}
+
+ul li:last-child {
+  border-bottom: 0;
+}
